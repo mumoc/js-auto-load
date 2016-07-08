@@ -8,7 +8,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-controller='<%= controller_name.titleize -%>' data-action='<%= action_name.titleize -%>'>
     <%= yield %>
   </body>
+
+  <script>
+    $(document).ready(function(){ AutoLoad.Config.setup() });
+  </script>
 </html>
